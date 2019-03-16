@@ -60,6 +60,9 @@ section {
   background-color: #f3f3f3;
   min-height: 100%;
 }
+label {
+  margin-left: 10px;
+}
 #footer {
   background-color: #444;
   color: #aaa;
@@ -68,6 +71,7 @@ section {
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  bottom: 0;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -131,6 +135,8 @@ nav h1 a {
   height: 75px;
   background-color: #3397db;
   align-items: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 .filter-options h2 {
   color: white;
@@ -148,8 +154,7 @@ nav h1 a {
   height: 35px;
   letter-spacing: 0;
   margin: 5px;
-
-  width: 120px;
+  width: 135px;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -320,8 +325,11 @@ nav h1 a {
 #reviews-list li p {
   margin: 0 0 10px;
 } */
+
 #restaurant-hours td {
   color: #666;
+  font-size: 15px;
+  padding: 1px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -360,10 +368,14 @@ nav h1 a {
   .inside #footer {
     text-align: center;
   }
-  @media only screen and (max-width: 750px) {
-    #restaurant-container,
-    #reviews-container {
-      width: 70%;
-    }
+}
+
+@media only screen and (max-width: 750px) {
+  #restaurant-container,
+  #reviews-container {
+    width: 70%;
+  }
+  h1 {
+    font-size: 5px;
   }
 }

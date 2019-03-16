@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-En">
   <head>
+    <meta charset="utf-8" />
     <link
       rel="stylesheet"
       src="//normalize-css.googlecode.com/svn/trunk/normalize.css"
@@ -12,35 +13,47 @@
       integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
       crossorigin=""
     />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Restaurant Reviews</title>
   </head>
 
   <body>
-    <header>
+    <header tabindex="0">
       <nav>
         <h1><a href="/">Restaurant Reviews</a></h1>
       </nav>
     </header>
 
-    <main id="maincontent">
-      <section id="map-container"><div id="map"></div></section>
-      <section>
+    <main id="maincontent" tabindex="-1">
+      <section id="map-container" tabindex="-2">
+        <div id="map" aria-label="Map location"></div>
+      </section>
+      <section tabindex="-3">
         <div class="filter-options">
           <h2>Filter Results</h2>
-          <select
-            id="neighborhoods-select"
-            name="neighborhoods"
-            onchange="updateRestaurants()"
-          >
-            <option value="all">All Neighborhoods</option>
-          </select>
-          <select
-            id="cuisines-select"
-            name="cuisines"
-            onchange="updateRestaurants()"
-          >
-            <option value="all">All Cuisines</option>
-          </select>
+          <div>
+            <label for="neighborhoods-select">Neighborhoods</label>
+            <select
+              id="neighborhoods-select"
+              name="neighborhoods"
+              onchange="updateRestaurants()"
+              aria-label="Select neighborhoods"
+            >
+              <option value="all">All Neighborhoods</option>
+            </select>
+          </div>
+          <div>
+            <label for="cuisines-select">Cuisines</label>
+            <select
+              id="cuisines-select"
+              name="cuisines"
+              onchange="updateRestaurants()"
+              aria-label="Select Cuisines"
+            >
+              <option value="all">All Cuisines</option>
+            </select>
+          </div>
         </div>
         <ul id="restaurants-list"></ul>
       </section>
