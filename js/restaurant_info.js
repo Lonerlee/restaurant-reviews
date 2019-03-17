@@ -1,6 +1,19 @@
 let restaurant;
 var newMap;
 
+//checking for service worker
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./sworker.js", { scope: "./" })
+    .then(function(registration) {
+      console.log("Service Worker is registered.", registration);
+    })
+    .catch(function(err) {
+      console.log("Error: " + err);
+    });
+}
+
 /**
  * Initialize map as soon as the page is loaded.
  */
@@ -200,16 +213,3 @@ getParameterByName = (name, url) => {
   if (!results[2]) return "";
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
-
-//checking for service worker
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("./sworker.js", { scope: "./" })
-    .then(function(registration) {
-      console.log("Service Worker is registered.", registration);
-    })
-    .catch(function(err) {
-      console.log("Error: " + err);
-    });
-}
