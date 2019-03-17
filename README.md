@@ -7,15 +7,12 @@
 This project uses the port of:
 
 ```
-8030
+5500
 ```
 
-To run this project I used python. To create server needed for all features of the page use this command in terminal:
-
-```
-python -m 8030 --bind 127.0.0.1
-```
+To run this project I used python previously, but it is not working well with MIME, because some problems with header. I use live server plugin from Visual Studio Code now.
 
 ### Side Notes
 
 \*I used also node.js, because I had some problems with accessing my service worker by python. I had some problems with MIME.
+\*I changed to default port of live server.
