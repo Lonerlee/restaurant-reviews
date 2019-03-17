@@ -18,5 +18,4 @@ python -m 8030 --bind 127.0.0.1
 
 ### Side Notes
 
-*I used also node.js, because I had some problems with accessing my service worker by python. I had some problems with MIME.
-
+\*I used also node.js, because I had some problems with accessing my service worker by python. I had some problems with MIME.
