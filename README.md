@@ -14,5 +14,6 @@ To run this project I used python previously, but it is not working well with MI
 
 ### Side Notes
 
-*I used also node.js, because I had some problems with accessing my service worker by python. I had some problems with MIME.
-*I changed to default port of live server.
+I used also node.js, because I had some problems with accessing my service worker by python. I had some problems with MIME.
+
+I changed to default port of live server.
