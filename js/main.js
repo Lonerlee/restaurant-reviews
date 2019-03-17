@@ -2,19 +2,6 @@ let restaurants, neighborhoods, cuisines;
 var newMap;
 var markers = [];
 
-//checking for service worker
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("./sworker.js", { scope: "./" })
-    .then(function(registration) {
-      console.log("Service Worker is registered.", registration);
-    })
-    .catch(function(err) {
-      console.log("Error: " + err);
-    });
-}
-
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -231,3 +218,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+//checking for service worker
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./sworker.js", { scope: "./" })
+    .then(function(registration) {
+      console.log("Service Worker is registered.", registration);
+    })
+    .catch(function(err) {
+      console.log("Error: " + err);
+    });
+}

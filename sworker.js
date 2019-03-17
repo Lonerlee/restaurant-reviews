@@ -1,5 +1,5 @@
-let cacheName = "restaurant-cache";
-let cacheUrls = [
+const cacheName = "restaurant-cache";
+const cacheUrls = [
   "/",
   "./img/1.jpg",
   "./img/2.jpg",
@@ -20,18 +20,6 @@ let cacheUrls = [
   "./js/restaurant_info.js"
 ];
 
-self.addEventListener("fetch", event => {
-  console.log("Fetching cache.");
-  event.respondWith(
-    caches
-      .match(event.request)
-      .then(response => {
-        return response && fetch(event.request);
-      })
-      .catch(err => console.log(err, event.request))
-  );
-});
-
 self.addEventListener("install", function(event) {
   console.log("Starting installation.");
   event.waitUntil(
@@ -39,6 +27,17 @@ self.addEventListener("install", function(event) {
       console.log("Openning cache.");
       return cache.addAll(cacheUrls);
     })
+  );
+});
+
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches
+      .match(event.request)
+      .then(response => {
+        return response || fetch(event.request);
+      })
+      .catch(err => console.log(err, event.request))
   );
 });
 
